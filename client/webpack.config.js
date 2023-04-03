@@ -30,6 +30,17 @@ module.exports = () => {
         new InjectManifest({
           swSrc: './src-sw.js',
           swDest: 'service-worker.js'
+        }),
+
+        new WebpackPwaManifest({
+          name: "Just Another Text Editor",
+          shortName: "J.A.T.E.",
+          description: "Text editor web app",
+          icons: {
+            src: path.resolve('images/logo.png'),
+            sizes: [96, 128, 192, 256],
+            destination: path.join('assets', 'icons')
+          }
         })
       
     ],
