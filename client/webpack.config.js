@@ -37,7 +37,7 @@ module.exports = () => {
           shortName: "J.A.T.E.",
           description: "Text editor web app",
           icons: {
-            src: path.resolve('images/logo.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256],
             destination: path.join('assets', 'icons')
           }
@@ -61,7 +61,11 @@ module.exports = () => {
               plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             }
           }
-        }
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+        },
       ],
     },
   };
