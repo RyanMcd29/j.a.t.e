@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
-const { InjectManifest } = require('workbox-webpack-plugin');
+const { InjectManifest, GenerateSW } = require('workbox-webpack-plugin');
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
 
@@ -35,6 +35,10 @@ module.exports = () => {
           name: "Just Another Text Editor",
           shortName: "J.A.T.E.",
           description: "Text editor web app",
+          background_color: `#272822`,
+          theme_color: `#272822`,
+          start_url: "/",
+          publicPath: "/",
           icons: {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256],
@@ -57,7 +61,9 @@ module.exports = () => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
-              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+              plugins: [
+                '@babel/plugin-proposal-object-rest-spread', 
+                '@babel/transform-runtime'],
             }
           }
         },
