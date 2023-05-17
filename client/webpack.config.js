@@ -32,6 +32,8 @@ module.exports = () => {
         }),
 
         new WebpackPwaManifest({
+          fingerprints: false,
+          inject: true,
           name: "Just Another Text Editor",
           shortName: "J.A.T.E.",
           description: "Text editor web app",
