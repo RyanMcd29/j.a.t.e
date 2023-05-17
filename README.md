@@ -25,7 +25,9 @@ When you visit the app online there is also an option to install it as a PWA by 
 
 ## Technologies
 > Express
+
 > Webpack
+
 > iDB
 
 ## Questions
